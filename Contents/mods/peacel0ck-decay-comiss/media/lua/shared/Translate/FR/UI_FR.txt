@@ -1,0 +1,5 @@
+UI_FR {
+    UI_REMOVE_VEG = "Enlever la végétation",
+    UI_FOUNDSOMETHING = "J'ai trouvé quelque chose...",
+	UI_GAINSKILL = "Recherche"
+}

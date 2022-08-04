@@ -1,0 +1,5 @@
+UI_RU = {
+	UI_REMOVE_VEG = "Удалить растительность",
+	UI_FOUNDSOMETHING = "Я нашел кое-что...",
+	UI_GAINSKILL = "Собирательство"
+}
