@@ -172,7 +172,7 @@ BIOMES["jungle"] = {
         ["ALL"] = {---ALL tiles - don't use this lightly
                 ---Anything other than "other" is a special case for specific roomIDs, giving "other" a specialCase of "isOutside".
                 --- Special cases are handled as a string, denoting function names above separated by a semicolon (;).
-                { name = "other", chance = 100, specialCases = false, tiles = outdoorFloorPlants},
+                { name = "other", chance = 90, specialCases = false, tiles = outdoorFloorPlants},
                 --{ name = "roomID", chance = 100, specialCases = "isOutside;hasObjectOnTop", tiles = { "f_wallvines_1_24", "f_wallvines_1_25"}},
         },
     },
