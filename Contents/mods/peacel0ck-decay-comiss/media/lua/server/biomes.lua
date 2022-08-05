@@ -9,18 +9,6 @@ local specialCaseFunctions = {}
 specialCaseFunctions.square = {}
 specialCaseFunctions.object = {}
 
----@param square IsoGridSquare
-function specialCaseFunctions.square.isOutside(square)
-    if not square then return end
-    return square:isOutside()
-end
-
----@param square IsoGridSquare
-function specialCaseFunctions.square.isInside(square)
-    if not square then return end
-    return (not square:isOutside())
-end
-
 ---This is a filler function to trigger another check below
 ---@param object IsoObject
 function specialCaseFunctions.object.hasObjectOnTop(object)
@@ -55,20 +43,25 @@ end
 -- "doorW", "doorN", "lightswitch", "radio", "curtainN", "curtainS", "curtainW", "curtainE", "doorFrW", "doorFrN",
 -- "tree", "windowFN", "windowFW", "UNUSED24", "WestRoofB", "WestRoofM", "WestRoofT", "isMoveAbleObject",
 
-
 ---@param object IsoObject
----@param var string string that can be separated by , for multiple checks
+---@param var string string that can be separated by , for multiple checks, !var = not var
 function specialCaseFunctions.object.isIsoFlagType(object, var)
     if not object and not var then return end
     local check = false
 
     for str in string.gmatch(var, "([^"..",".."]+)") do
         local propertyCont = object:getProperties()
-        if propertyCont:Is(IsoFlagType.FromString(str)) then
-            check = true
+        local notStr = string.match(str, "!(.*)")
+        if notStr then
+            if not propertyCont:Is(IsoFlagType.FromString(notStr)) then
+                check = true
+            end
+        else
+            if propertyCont:Is(IsoFlagType.FromString(str)) then
+                check = true
+            end
         end
     end
-
 
     return check
 end
