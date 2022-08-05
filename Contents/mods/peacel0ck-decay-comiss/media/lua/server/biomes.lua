@@ -93,54 +93,54 @@ BIOMES["WORLD"] = {---WORLD flags this biome for ALL tiles - don't use this ligh
     overlays = {
         ["ALL"] = {--This is for what sprite to apply overlays onto, ALL will apply to all tiles regardless of spriteName
 
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_0","pert_walls_decayingwallpaper_12","pert_walls_decayingwallpaper_28","pert_walls_decayingwallpaper_30"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_1","pert_walls_decayingwallpaper_13","pert_walls_decayingwallpaper_29","pert_walls_decayingwallpaper_31"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallNW", tiles = {"pert_walls_decayingwallpaper_2"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallSE", tiles = {"pert_walls_decayingwallpaper_3"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_0","pert_walls_decayingwallpaper_12","pert_walls_decayingwallpaper_28","pert_walls_decayingwallpaper_30"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_1","pert_walls_decayingwallpaper_13","pert_walls_decayingwallpaper_29","pert_walls_decayingwallpaper_31"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"pert_walls_decayingwallpaper_2"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallSE,!exterior", tiles = {"pert_walls_decayingwallpaper_3"}},
 
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_4"}},
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_5"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_4"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_5"}},
 
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_6"}},
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_7"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_6"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_7"}},
 
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_19"}},
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_18"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_19"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_18"}},
 
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_20"}},
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_21"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_20"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_21"}},
 
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_22"}},
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_23"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_22"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_23"}},
 
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_24"}},
-            { name = "other", chance = 0.3, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_25"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_24"}},
+            { name = "other", chance = 0.3, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_25"}},
 
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_26"}},
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_27"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_26"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_27"}},
 
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"pert_walls_decayingwallpaper_32"}},
-            { name = "other", chance = 0.2, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"pert_walls_decayingwallpaper_33"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_32"}},
+            { name = "other", chance = 0.2, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_33"}},
 
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:floorS", tiles = {"overlay_grime_floor_01_0"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:floorE", tiles = {"overlay_grime_floor_01_1"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:floorS,!exterior", tiles = {"overlay_grime_floor_01_0"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:floorE,!exterior", tiles = {"overlay_grime_floor_01_1"}},
 
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"overlay_grime_wall_01_0"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"overlay_grime_wall_01_1"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallNW", tiles = {"overlay_grime_wall_01_2"}},
-            { name = "other", chance = 1, specialCases = "isInside;isIsoFlagType:WallSE", tiles = {"overlay_grime_wall_01_3"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"overlay_grime_wall_01_0"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"overlay_grime_wall_01_1"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"overlay_grime_wall_01_2"}},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:WallSE,!exterior", tiles = {"overlay_grime_wall_01_3"}},
 
-            { name = "other", chance = 0.8, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"overlay_grime_wall_01_15"}},
-            { name = "other", chance = 0.8, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"overlay_grime_wall_01_16"}},
-            { name = "other", chance = 0.8, specialCases = "isInside;isIsoFlagType:WallNW", tiles = {"overlay_grime_wall_01_17"}},
+            { name = "other", chance = 0.8, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"overlay_grime_wall_01_15"}},
+            { name = "other", chance = 0.8, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"overlay_grime_wall_01_16"}},
+            { name = "other", chance = 0.8, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"overlay_grime_wall_01_17"}},
 
-            { name = "other", chance = 0.75, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"overlay_grime_wall_01_4"}},
-            { name = "other", chance = 0.75, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"overlay_grime_wall_01_5"}},
-            { name = "other", chance = 0.80, specialCases = "isInside;isIsoFlagType:WallNW", tiles = {"overlay_grime_wall_01_6"}},
+            { name = "other", chance = 0.75, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"overlay_grime_wall_01_4"}},
+            { name = "other", chance = 0.75, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"overlay_grime_wall_01_5"}},
+            { name = "other", chance = 0.80, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"overlay_grime_wall_01_6"}},
 
-            { name = "other", chance = 0.55, specialCases = "isInside;isIsoFlagType:WallW", tiles = {"overlay_grime_wall_01_19"}},
-            { name = "other", chance = 0.55, specialCases = "isInside;isIsoFlagType:WallN", tiles = {"overlay_grime_wall_01_20"}},
-            { name = "other", chance = 0.60, specialCases = "isInside;isIsoFlagType:WallNW", tiles = {"overlay_grime_wall_01_21"}},
+            { name = "other", chance = 0.55, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"overlay_grime_wall_01_19"}},
+            { name = "other", chance = 0.55, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"overlay_grime_wall_01_20"}},
+            { name = "other", chance = 0.60, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"overlay_grime_wall_01_21"}},
         },
     },
 }
@@ -157,7 +157,7 @@ BIOMES["jungle"] = {
             ---Anything other than "other" is a special case for specific roomIDs, giving "other" a specialCase of "isOutside".
             --- Chance is a floating number - randomized off x10000 to allow for a minimum chance is 0.0001, maximum is 1.
             --- Special cases are handled as a string, denoting function names above separated by a semicolon (;).
-            { name = "other", chance = 1, specialCases = "isOutside", tiles = outdoorFloorPlants},
+            { name = "other", chance = 1, specialCases = "isIsoFlagType:exterior", tiles = outdoorFloorPlants},
             --{ name = "roomID", chance = 1, specialCases = "isOutside;hasObjectOnTop", tiles = { "f_wallvines_1_24", "f_wallvines_1_25"}},
         },
 
