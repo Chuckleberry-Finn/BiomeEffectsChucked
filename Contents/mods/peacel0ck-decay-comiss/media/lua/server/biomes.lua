@@ -124,7 +124,7 @@ BIOMES["WORLD"] = {---WORLD flags this biome for ALL tiles - don't use this ligh
 
             { name = "other", chance = 100, specialCases = "isIsoFlagType:floorS,!exterior", tiles = {"overlay_grime_floor_01_0"}},
             { name = "other", chance = 100, specialCases = "isIsoFlagType:floorE,!exterior", tiles = {"overlay_grime_floor_01_1"}},
---[[
+
             { name = "other", chance = 100, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_0","pert_walls_decayingwallpaper_12","pert_walls_decayingwallpaper_28","pert_walls_decayingwallpaper_30"}},
             { name = "other", chance = 100, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_1","pert_walls_decayingwallpaper_13","pert_walls_decayingwallpaper_29","pert_walls_decayingwallpaper_31"}},
             { name = "other", chance = 100, specialCases = "isIsoFlagType:WallNW,!exterior", tiles = {"pert_walls_decayingwallpaper_2"}},
@@ -153,7 +153,7 @@ BIOMES["WORLD"] = {---WORLD flags this biome for ALL tiles - don't use this ligh
 
             { name = "other", chance = 20, specialCases = "isIsoFlagType:WallW,!exterior", tiles = {"pert_walls_decayingwallpaper_32"}},
             { name = "other", chance = 20, specialCases = "isIsoFlagType:WallN,!exterior", tiles = {"pert_walls_decayingwallpaper_33"}},
---]]
+
         },
 
     },
