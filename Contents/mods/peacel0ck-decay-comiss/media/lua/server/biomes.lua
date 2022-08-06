@@ -163,8 +163,9 @@ local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
             end
         end
     end
-
-    if lastSpriteObject then return isoObjects:get(lastSpriteObject) end
+    if objWithFlagFound and lastSpriteObject then
+        return isoObjects:get(lastSpriteObject)
+    end
 end
 
 
