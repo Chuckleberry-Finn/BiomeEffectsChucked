@@ -20,8 +20,7 @@ function ISRemoveBush:getBushObject(square)
                 for n=0,attached:size()-1 do
                     local sprite = attached:get(n)
                     local parentSprite = sprite:getParentSprite()
-                    if parentSprite and parentSprite:getProperties():Is(IsoFlagType.canBeCut)
-                            and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_")) then
+                    if parentSprite and parentSprite:getProperties():Is(IsoFlagType.canBeCut) then
                         return object, n
                     end
                 end
@@ -46,7 +45,7 @@ function ISRemoveGrass:isValid()
                     local sprite = attached:get(n)
                     local parentSprite = sprite:getParentSprite()
                     if parentSprite and parentSprite:getProperties():Is(IsoFlagType.canBeRemoved)
-                            and (not parentSprite:getProperties():Is(IsoFlagType.canBeCut)) then
+                        and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_")) then
                         return true
                     end
                 end
@@ -103,12 +102,14 @@ local function addSpriteSensitiveContexts(player, context, worldobjects)
                     local sprite = attached:get(n-1)
                     local parentSprite = sprite:getParentSprite()
 
-                    if parentSprite and parentSprite:getProperties() and parentSprite:getProperties():Is(IsoFlagType.canBeCut) and hasCuttingTool then
+                    if parentSprite and parentSprite:getProperties()
+                            and parentSprite:getProperties():Is(IsoFlagType.canBeCut) and hasCuttingTool then
                         canBeCut = sprite
                     end
 
-                    if parentSprite and parentSprite:getProperties() and parentSprite:getProperties():Is(IsoFlagType.canBeRemoved)
-                            and (not parentSprite:getProperties():Is(IsoFlagType.canBeCut)) then
+                    if parentSprite and parentSprite:getProperties()
+                            and parentSprite:getProperties():Is(IsoFlagType.canBeRemoved)
+                            and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_")) then
                         canBeRemoved = sprite
                     end
                 end

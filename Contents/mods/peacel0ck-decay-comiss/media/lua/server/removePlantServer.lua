@@ -21,8 +21,7 @@ function ISRemovePlantCursor:getRemovableObject(square)
 
                     if self.removeType == "grass" and parentSprite and parentSprite:getProperties()
                             and parentSprite:getProperties():Is(IsoFlagType.canBeRemoved)
-                            and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_"))
-                            and (not parentSprite:getProperties():Is(IsoFlagType.canBeCut)) then
+                            and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_")) then
                         return object
                     end
                 end
