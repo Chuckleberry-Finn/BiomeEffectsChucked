@@ -105,8 +105,6 @@ BIOMES["jungle"].WindowN = BIOMES["jungle"].WallN
 -- "doorW", "doorN", "lightswitch", "radio", "curtainN", "curtainS", "curtainW", "curtainE", "doorFrW", "doorFrN", "tree",
 -- "windowFN", "windowFW", "UNUSED24", "WestRoofB", "WestRoofM", "WestRoofT", "isMoveAbleObject",
 
--- IsoCurtain IsoDoor IsoWindow IsoBarricade IsoLightSwitch
-
 --FlagTypes
 --  "collideW", "collideN", "solidfloor", "noStart", "windowW", "windowN", "hidewalls", "exterior", "NoWallLighting",
 -- "doorW", "doorN", "transparentW", "transparentN", "WallOverlay", "FloorOverlay", "vegitation", "burning", "burntOut",
@@ -120,10 +118,7 @@ BIOMES["jungle"].WindowN = BIOMES["jungle"].WallN
 -- "FloorHeightOneThird", "FloorHeightTwoThirds", "CantClimb", "diamondFloor", "attachedSE", "TallHoppableW", "WallWTrans",
 -- "TallHoppableN", "WallNTrans", "container", "DoorWallW", "DoorWallN", "WallW", "WallN", "WallNW", "SpearOnlyAttackThrough", "forceRender"
 
-
-
 local specialOverrideExceptions = {"IsoCurtain","IsoDoor","IsoWindow","IsoBarricade","IsoLightSwitch"}
-
 ---Vanilla has a getFloor but it causes layering issues if there's objects over the floor - like walls
 ---@param isoGridSquare IsoGridSquare
 local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
@@ -152,7 +147,6 @@ local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
                         if (not isoGridSquare:getProperties():Is("IsMoveAble")) then
                             lastSpriteObject = i
                         end
-
                         for _,type in pairs(specialOverrideExceptions) do
                             if instanceof(isoObj, type) then
                                 lastSpriteObject = i
