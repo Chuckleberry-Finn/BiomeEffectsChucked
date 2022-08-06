@@ -1,5 +1,0 @@
-UI_TH = {
-    UI_REMOVE_VEG = "กำจัดวัชพืช",
-    UI_FOUNDSOMETHING = "เจออะไรบางอย่าง...",
-	UI_GAINSKILL = "การค้นหาของ"
-}

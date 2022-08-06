@@ -1,5 +1,0 @@
-UI_EN = {
-    UI_REMOVE_VEG = "Remove vegetation",
-    UI_FOUNDSOMETHING = "I found something...",
-	UI_GAINSKILL = "Foraging"
-}
