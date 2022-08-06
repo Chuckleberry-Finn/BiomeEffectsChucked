@@ -132,6 +132,8 @@ local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
     local objWithFlagFound
     local lastSpriteObject
 
+    if isoFlagType == IsoFlagType.solidfloor and isoGridSquare:getProperties():Is("BlocksPlacement") then return end
+
     for i=0, isoObjects:size()-1 do
         ---@type IsoObject
         local isoObj = isoObjects:get(i)
@@ -139,7 +141,6 @@ local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
             local isoObjSprite = isoObj:getSprite()
             local isoObjSpriteName = isoObjSprite:getName()
             if isoObjSprite and isoObjSpriteName then
-                if isoFlagType == IsoFlagType.solidfloor and isoGridSquare:getProperties():Is("BlocksPlacement") then return end
                 if isoObj:getType()==IsoObjectType.wall and string.find(isoObjSpriteName, "roofs") then
                 else
                     if isoObjSprite:getProperties():Is(isoFlagType) then
