@@ -5,9 +5,7 @@ BIOMES["grime"] = {
     areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 7}, },
     chance = 100,
 
-    indoorFloor = false,
-    outsideFloor = false,
-    --solidfloor = false, <- ALL FLOORS
+    --solidfloor = { inside = {}, outside = {}, },
 
     WallW = {"overlay_grime_wall_01_0"},
     WallN = {"overlay_grime_wall_01_1"},
@@ -24,9 +22,7 @@ BIOMES["desert"] = {
     areas = false,--{ { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 7}, },
     chance = 90,
 
-    indoorFloor = false,
-    outsideFloor = false,
-    --solidfloor = false, <- ALL FLOORS
+    --solidfloor = { inside = {}, outside = {}, },
 
     WallW = {"f_wallvines_1_0","f_wallvines_1_1","f_wallvines_1_6","f_wallvines_1_7",
              "f_wallvines_1_12","f_wallvines_1_13","f_wallvines_1_18","f_wallvines_1_19"},
@@ -45,46 +41,52 @@ BIOMES["desert"].WindowN = BIOMES["desert"].WallN
 
 BIOMES["jungle"] = {
     ---Whatever area you choose needs to have a smaller x1/y1/z1 than x2/y2/z2
-    areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 7}, },
+    areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 3}, },
     chance = 90,
 
-    --solidfloor = {}, <- ALL FLOORS
-    insideFloor = {"vegetation_farm_01_40","vegetation_farm_01_41","vegetation_farm_01_46","vegetation_farm_01_43",
-              "e_newgrass_1_18", "e_newgrass_1_20", "e_newgrass_1_22", "e_newgrass_1_23",
-              "e_newgrass_1_24", "e_newgrass_1_27", "e_newgrass_1_28","e_newgrass_1_50", "e_newgrass_1_52",
-              "e_newgrass_1_28","e_newgrass_1_4", "e_newgrass_1_3", "e_newgrass_1_83", "blends_grassoverlays_01_53",
-              "blends_grassoverlays_01_52", "blends_grassoverlays_01_51","blends_grassoverlays_01_49",
-              "blends_grassoverlays_01_48", "blends_grassoverlays_01_24", "blends_grassoverlays_01_25",
-              "blends_grassoverlays_01_26", "blends_grassoverlays_01_27", "blends_grassoverlays_01_28",
-              "blends_grassoverlays_01_29", "blends_grassoverlays_01_5", "blends_grassoverlays_01_4",
-              "blends_grassoverlays_01_3", "blends_grassoverlays_01_2","blends_grassoverlays_01_1",
-              "blends_grassoverlays_01_0", "blends_grassoverlays_01_32", "blends_grassoverlays_01_33",
-              "blends_grassoverlays_01_34", "blends_grassoverlays_01_35", "blends_grassoverlays_01_36",
-              "blends_grassoverlays_01_37", "blends_grassoverlays_01_16", "blends_grassoverlays_01_17",
-              "blends_grassoverlays_01_19", "blends_grassoverlays_01_18","d_plants_1_0", "d_plants_1_1",
-              "d_plants_1_2", "d_plants_1_3", "d_plants_1_4", "d_plants_1_5", "d_plants_1_6", "d_plants_1_7",
-              "d_plants_1_8", "d_plants_1_9","d_plants_1_10", "d_plants_1_11","d_plants_1_12", "d_plants_1_13",
-              "d_plants_1_14", "d_plants_1_15","d_plants_1_16", "d_plants_1_17", "d_plants_1_18","d_plants_1_19",
-              "d_plants_1_20","d_plants_1_21", "d_plants_1_22", "d_plants_1_23","d_plants_1_25", "d_plants_1_26",
-              "d_plants_1_28","d_plants_1_29", "d_plants_1_32", "d_plants_1_33", "d_plants_1_34", "d_plants_1_35",
-              "d_plants_1_36", "d_plants_1_37","d_plants_1_38", "d_plants_1_39", "d_plants_1_48", "d_plants_1_49",
-              "d_plants_1_50","d_plants_1_51", "d_plants_1_52", "d_plants_1_53", "d_plants_1_54","d_plants_1_55 ",
-              "d_generic_1_20", "d_generic_1_80","d_generic_1_81", "d_generic_1_14", "d_generic_1_24", "d_generic_1_22",
-              "d_generic_1_86", "d_generic_1_51", "d_generic_1_82"},
+    applyTags = {
+        solidfloor = {"canBeCut"},
+    },
 
-    outsideFloor = { "d_plants_1_28","d_plants_1_60","d_plants_1_29","d_plants_1_36","d_plants_1_37","d_plants_1_25",
-                "d_plants_1_18", "d_plants_1_19","d_plants_1_61","d_plants_1_0", "d_plants_1_1", "d_plants_1_4",
-                "d_plants_1_5","d_plants_1_6", "d_plants_1_7", "d_plants_1_8", "d_plants_1_19", "d_plants_1_20",
-                "d_plants_1_34", "d_plants_1_35", "d_plants_1_36", "d_plants_1_37", "d_plants_1_38",
-                "vegetation_farm_01_40","vegetation_farm_01_41","vegetation_farm_01_46", "vegetation_farm_01_43",
-                "e_newgrass_1_4", "e_newgrass_1_3", "e_newgrass_1_2","e_newgrass_1_1","e_newgrass_1_0", "e_newgrass_1_46",
-                "e_newgrass_1_45", "e_newgrass_1_7", "e_newgrass_1_6", "e_newgrass_1_5", "e_newgrass_1_40",
-                "e_newgrass_1_41", "e_newgrass_1_42", "e_newgrass_1_43", "e_newgrass_1_44", "e_newgrass_1_47",
-                "e_newgrass_1_39", "e_newgrass_1_38", "e_newgrass_1_37", "e_newgrass_1_19", "e_newgrass_1_20",
-                "e_newgrass_1_22", "e_newgrass_1_23", "e_newgrass_1_36", "d_plants_1_38", "d_plants_1_35", "d_plants_1_39",
-                "d_plants_1_34","d_plants_1_32", "d_plants_1_33", "d_plants_1_55", "d_plants_1_53", "d_plants_1_49",
-                "d_plants_1_51", "d_plants_1_16", "d_plants_1_17", "d_plants_1_20", "d_plants_1_21", "d_plants_1_22",
-                "d_plants_1_18", "d_plants_1_19", "d_plants_1_23", "d_plants_1_37", "d_plants_1_36" },
+    solidfloor = {
+
+        inside = { "vegetation_farm_01_40","vegetation_farm_01_41", "vegetation_farm_01_46", "vegetation_farm_01_43",
+                    "e_newgrass_1_18", "e_newgrass_1_20", "e_newgrass_1_22", "e_newgrass_1_23",
+                    "e_newgrass_1_24", "e_newgrass_1_27", "e_newgrass_1_28", "e_newgrass_1_50", "e_newgrass_1_52",
+                    "e_newgrass_1_28", "e_newgrass_1_4", "e_newgrass_1_3", "e_newgrass_1_83", "blends_grassoverlays_01_53",
+                    "blends_grassoverlays_01_52", "blends_grassoverlays_01_51", "blends_grassoverlays_01_49",
+                    "blends_grassoverlays_01_48", "blends_grassoverlays_01_24", "blends_grassoverlays_01_25",
+                    "blends_grassoverlays_01_26", "blends_grassoverlays_01_27", "blends_grassoverlays_01_28",
+                    "blends_grassoverlays_01_29", "blends_grassoverlays_01_5", "blends_grassoverlays_01_4",
+                    "blends_grassoverlays_01_3", "blends_grassoverlays_01_2", "blends_grassoverlays_01_1",
+                    "blends_grassoverlays_01_0", "blends_grassoverlays_01_32", "blends_grassoverlays_01_33",
+                    "blends_grassoverlays_01_34", "blends_grassoverlays_01_35", "blends_grassoverlays_01_36",
+                    "blends_grassoverlays_01_37", "blends_grassoverlays_01_16", "blends_grassoverlays_01_17",
+                    "blends_grassoverlays_01_19", "blends_grassoverlays_01_18", "d_plants_1_0", "d_plants_1_1",
+                    "d_plants_1_2", "d_plants_1_3", "d_plants_1_4", "d_plants_1_5", "d_plants_1_6", "d_plants_1_7",
+                    "d_plants_1_8", "d_plants_1_9", "d_plants_1_10", "d_plants_1_11", "d_plants_1_12", "d_plants_1_13",
+                    "d_plants_1_14", "d_plants_1_15", "d_plants_1_16", "d_plants_1_17", "d_plants_1_18", "d_plants_1_19",
+                    "d_plants_1_20", "d_plants_1_21", "d_plants_1_22", "d_plants_1_23", "d_plants_1_25", "d_plants_1_26",
+                    "d_plants_1_28", "d_plants_1_29", "d_plants_1_32", "d_plants_1_33", "d_plants_1_34", "d_plants_1_35",
+                    "d_plants_1_36", "d_plants_1_37", "d_plants_1_38", "d_plants_1_39", "d_plants_1_48", "d_plants_1_49",
+                    "d_plants_1_50", "d_plants_1_51", "d_plants_1_52", "d_plants_1_53", "d_plants_1_54", "d_plants_1_55 ",
+                    "d_generic_1_20", "d_generic_1_80", "d_generic_1_81", "d_generic_1_14", "d_generic_1_24", "d_generic_1_22",
+                    "d_generic_1_86", "d_generic_1_51", "d_generic_1_82" },
+
+        outside = { "d_plants_1_28", "d_plants_1_60", "d_plants_1_29", "d_plants_1_36", "d_plants_1_37", "d_plants_1_25",
+                    "d_plants_1_18", "d_plants_1_19", "d_plants_1_61", "d_plants_1_0", "d_plants_1_1", "d_plants_1_4",
+                    "d_plants_1_5", "d_plants_1_6", "d_plants_1_7", "d_plants_1_8", "d_plants_1_19", "d_plants_1_20",
+                    "d_plants_1_34", "d_plants_1_35", "d_plants_1_36", "d_plants_1_37", "d_plants_1_38",
+                     "vegetation_farm_01_40", "vegetation_farm_01_41", "vegetation_farm_01_46", "vegetation_farm_01_43",
+                     "e_newgrass_1_4", "e_newgrass_1_3", "e_newgrass_1_2", "e_newgrass_1_1", "e_newgrass_1_0", "e_newgrass_1_46",
+                     "e_newgrass_1_45", "e_newgrass_1_7", "e_newgrass_1_6", "e_newgrass_1_5", "e_newgrass_1_40",
+                     "e_newgrass_1_41", "e_newgrass_1_42", "e_newgrass_1_43", "e_newgrass_1_44", "e_newgrass_1_47",
+                     "e_newgrass_1_39", "e_newgrass_1_38", "e_newgrass_1_37", "e_newgrass_1_19", "e_newgrass_1_20",
+                     "e_newgrass_1_22", "e_newgrass_1_23", "e_newgrass_1_36", "d_plants_1_38", "d_plants_1_35", "d_plants_1_39",
+                     "d_plants_1_34", "d_plants_1_32", "d_plants_1_33", "d_plants_1_55", "d_plants_1_53", "d_plants_1_49",
+                     "d_plants_1_51", "d_plants_1_16", "d_plants_1_17", "d_plants_1_20", "d_plants_1_21", "d_plants_1_22",
+                     "d_plants_1_18", "d_plants_1_19", "d_plants_1_23", "d_plants_1_37", "d_plants_1_36" },
+    },
 
     WallW = {"f_wallvines_1_43","f_wallvines_1_42","f_wallvines_1_37","f_wallvines_1_36",
              "f_wallvines_1_31","f_wallvines_1_30","f_wallvines_1_25","f_wallvines_1_24"},
@@ -107,6 +109,8 @@ BIOMES["jungle"].WindowN = BIOMES["jungle"].WallN
 -- "doorW", "doorN", "lightswitch", "radio", "curtainN", "curtainS", "curtainW", "curtainE", "doorFrW", "doorFrN", "tree",
 -- "windowFN", "windowFW", "UNUSED24", "WestRoofB", "WestRoofM", "WestRoofT", "isMoveAbleObject",
 
+-- IsoCurtain IsoDoor IsoWindow IsoBarricade IsoLightSwitch
+
 --FlagTypes
 --  "collideW", "collideN", "solidfloor", "noStart", "windowW", "windowN", "hidewalls", "exterior", "NoWallLighting",
 -- "doorW", "doorN", "transparentW", "transparentN", "WallOverlay", "FloorOverlay", "vegitation", "burning", "burntOut",
@@ -121,6 +125,8 @@ BIOMES["jungle"].WindowN = BIOMES["jungle"].WallN
 -- "TallHoppableN", "WallNTrans", "container", "DoorWallW", "DoorWallN", "WallW", "WallN", "WallNW", "SpearOnlyAttackThrough", "forceRender"
 
 
+
+local specialOverrideExceptions = {"IsoCurtain","IsoDoor","IsoWindow","IsoBarricade","IsoLightSwitch"}
 ---Vanilla has a getFloor but it causes layering issues if there's objects over the floor - like walls
 ---@param isoGridSquare IsoGridSquare
 local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
@@ -128,38 +134,39 @@ local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
 
     local objWithFlagFound
     local lastSpriteObject
-    local specialOverride
 
     for i=0, isoObjects:size()-1 do
         ---@type IsoObject
         local isoObj = isoObjects:get(i)
         if isoObj then
             local isoObjSprite = isoObj:getSprite()
-            if isoObjSprite then
-
-                if isoFlagType == IsoFlagType.solidfloor and isoGridSquare:getProperties():Is("BlocksPlacement") then
-                    return
-                end
-                
-                if isoObj:getType()==IsoObjectType.wall and string.find(isoObj:getSprite():getName(), "roofs") then
+            local isoObjSpriteName = isoObjSprite:getName()
+            if isoObjSprite and isoObjSpriteName then
+                if isoFlagType == IsoFlagType.solidfloor and isoGridSquare:getProperties():Is("BlocksPlacement") then return end
+                if isoObj:getType()==IsoObjectType.wall and string.find(isoObjSpriteName, "roofs") then
                 else
                     if isoObjSprite:getProperties():Is(isoFlagType) then
-                        if isoFlagType ~= IsoFlagType.solidfloor then
-                            specialOverride = i
-                        end
                         objWithFlagFound = true
-                    end
-                    if objWithFlagFound then
                         lastSpriteObject = i
+                    end
+
+                    if objWithFlagFound then
+                        if (not isoGridSquare:getProperties():Is("IsMoveAble")) then
+                            lastSpriteObject = i
+                        end
+
+                        for _,type in pairs(specialOverrideExceptions) do
+                            if instanceof(isoObj, type) then
+                                lastSpriteObject = i
+                            end
+                        end
                     end
                 end
             end
         end
     end
 
-    if specialOverride or lastSpriteObject then
-        return isoObjects:get(specialOverride or lastSpriteObject)
-    end
+    if lastSpriteObject then return isoObjects:get(lastSpriteObject) end
 end
 
 
@@ -181,13 +188,9 @@ local function applySpriteToObject(sprite, isoObject)
     if isoObjectAttachedAnimSprite then
         isoObjectAttachedAnimSprite:add(isoSpriteInstance)
     end
+
+    return isoSprite
 end
-
-
-local GRIME_TILES = {
-    WallN = "overlay_grime_wall_01_1", WallW = "overlay_grime_wall_01_0", WallNW = "overlay_grime_wall_01_2", WallSE = "overlay_grime_wall_01_3",
-    DoorWallW = "overlay_grime_wall_01_10", DoorWallN = "overlay_grime_wall_01_11", WindowW = "overlay_grime_wall_01_8", WindowN = "overlay_grime_wall_01_9",
-}
 
 
 local function grabRandom(list)
@@ -205,29 +208,33 @@ local function applyBiome(isoGridSquare, x, y, z, outside)
         if (ZombRand(101) <= biome.chance) then
 
             for flag,sprites in pairs(biome) do
-                local object = ifFlagTypeGetObject(isoGridSquare, IsoFlagType[flag])
-                if object then
-                    local randTile = grabRandom(sprites)
-                    applySpriteToObject(randTile, object)
-                end
-            end
+                if IsoFlagType[flag] then
 
-            local floorObject = ifFlagTypeGetObject(isoGridSquare, IsoFlagType.solidfloor)
-            if floorObject then
+                    local object = ifFlagTypeGetObject(isoGridSquare, IsoFlagType[flag])
+                    if object then
 
-                if outside then
-                    local sprites = biome.outsideFloor
-                    if sprites then
-                        local randTile = grabRandom(sprites)
-                        applySpriteToObject(randTile, floorObject)
-                    end
-                end
+                        local spritesToUse
+                        if (sprites.inside or sprites.outside) then
+                            if outside and sprites.outside then
+                                spritesToUse = sprites.outside
+                            elseif (not outside) and sprites.inside then
+                                spritesToUse = sprites.inside
+                            end
+                        else
+                            spritesToUse = sprites
+                        end
 
-                if (not outside) then
-                    local sprites = biome.insideFloor
-                    if sprites then
-                        local randTile = grabRandom(sprites)
-                        applySpriteToObject(randTile, floorObject)
+                        if spritesToUse then
+                            local randTile = grabRandom(spritesToUse)
+                            if randTile then
+                                local sprite = applySpriteToObject(randTile, object)
+                                if biome.applyTags and biome.applyTags[flag] then
+                                    for _,f in pairs(biome.applyTags[flag]) do
+                                        sprite:getProperties():Set(IsoFlagType[f])
+                                    end
+                                end
+                            end
+                        end
                     end
                 end
             end
