@@ -44,10 +44,6 @@ BIOMES["jungle"] = {
     areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 3}, },
     chance = 90,
 
-    applyTags = {
-        solidfloor = {"canBeCut"},
-    },
-
     solidfloor = {
 
         inside = { "vegetation_farm_01_40","vegetation_farm_01_41", "vegetation_farm_01_46", "vegetation_farm_01_43",
@@ -127,6 +123,7 @@ BIOMES["jungle"].WindowN = BIOMES["jungle"].WallN
 
 
 local specialOverrideExceptions = {"IsoCurtain","IsoDoor","IsoWindow","IsoBarricade","IsoLightSwitch"}
+
 ---Vanilla has a getFloor but it causes layering issues if there's objects over the floor - like walls
 ---@param isoGridSquare IsoGridSquare
 local function ifFlagTypeGetObject(isoGridSquare, isoFlagType)
@@ -188,8 +185,6 @@ local function applySpriteToObject(sprite, isoObject)
     if isoObjectAttachedAnimSprite then
         isoObjectAttachedAnimSprite:add(isoSpriteInstance)
     end
-
-    return isoSprite
 end
 
 
@@ -227,12 +222,7 @@ local function applyBiome(isoGridSquare, x, y, z, outside)
                         if spritesToUse then
                             local randTile = grabRandom(spritesToUse)
                             if randTile then
-                                local sprite = applySpriteToObject(randTile, object)
-                                if biome.applyTags and biome.applyTags[flag] then
-                                    for _,f in pairs(biome.applyTags[flag]) do
-                                        sprite:getProperties():Set(IsoFlagType[f])
-                                    end
-                                end
+                                applySpriteToObject(randTile, object)
                             end
                         end
                     end
