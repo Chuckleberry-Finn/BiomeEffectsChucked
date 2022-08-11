@@ -57,6 +57,7 @@ local function onRemovePlantCommand(module, command, player, args)
                                 and (not luautils.stringStarts(parentSprite:getName(), "f_wallvines_")) then
                             object:RemoveAttachedAnim(n)
                             object:transmitUpdatedSpriteToClients()
+                            break
                         end
                     end
                 end
