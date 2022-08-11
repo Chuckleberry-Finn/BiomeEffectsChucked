@@ -51,6 +51,8 @@ function ISRemoveGrass:isValid()
                 end
             end
         end
+    else
+        return vanillaPass
     end
     return false
 end
