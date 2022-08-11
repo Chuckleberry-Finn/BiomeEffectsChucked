@@ -1,5 +1,5 @@
 local BIOMES = {}
-
+--[[
 BIOMES["grime"] = {
 
     areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 7}, },
@@ -16,8 +16,9 @@ BIOMES["grime"] = {
     WindowW = {"overlay_grime_wall_01_8"},
     WindowN = {"overlay_grime_wall_01_9"},
 }
+--]]
 
-
+--[[
 BIOMES["desert"] = {
     areas = false,--{ { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 7}, },
     chance = 90,
@@ -37,12 +38,14 @@ BIOMES["desert"].DoorWallW = BIOMES["desert"].WallW
 BIOMES["desert"].DoorWallN = BIOMES["desert"].WallN
 BIOMES["desert"].WindowW = BIOMES["desert"].WallW
 BIOMES["desert"].WindowN = BIOMES["desert"].WallN
-
+--]]
 
 BIOMES["jungle"] = {
     ---Whatever area you choose needs to have a smaller x1/y1/z1 than x2/y2/z2
     areas = { { x1 = 1, y1 = 1, x2 = 99999, y2 = 99999, z1 = 0, z2 = 3}, },
     chance = 90,
+
+    applyFlags = { solidfloor = {"canBeRemoved"} },
 
     solidfloor = {
 
@@ -182,6 +185,7 @@ local function applySpriteToObject(sprite, isoObject)
     local isoObjectAttachedAnimSprite = isoObject:getAttachedAnimSprite()
     if isoObjectAttachedAnimSprite then
         isoObjectAttachedAnimSprite:add(isoSpriteInstance)
+        return isoSpriteInstance
     end
 end
 
@@ -220,7 +224,26 @@ local function applyBiome(isoGridSquare, x, y, z, outside)
                         if spritesToUse then
                             local randTile = grabRandom(spritesToUse)
                             if randTile then
-                                applySpriteToObject(randTile, object)
+
+                                ---@type IsoSpriteInstance
+                                local sprite = applySpriteToObject(randTile, object)
+
+                                if sprite and biome.applyFlags then
+                                    local flagsToApply = biome.applyFlags[flag]
+                                    if flagsToApply then
+                                        local parentSprite = sprite:getParentSprite()
+                                        if parentSprite and parentSprite:getProperties() then
+                                            for _,flagToApply in pairs(flagsToApply) do
+                                                if not parentSprite:getProperties():Is(IsoFlagType[flagToApply]) then
+                                                    parentSprite:getProperties():Set(IsoFlagType[flagToApply])
+                                                    if parentSprite:getProperties():Is(IsoFlagType[flagToApply]) then
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+
                             end
                         end
                     end
