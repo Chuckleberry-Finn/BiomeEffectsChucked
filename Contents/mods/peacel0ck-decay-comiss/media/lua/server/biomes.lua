@@ -236,8 +236,6 @@ local function applyBiome(isoGridSquare, x, y, z, outside)
                                             for _,flagToApply in pairs(flagsToApply) do
                                                 if not parentSprite:getProperties():Is(IsoFlagType[flagToApply]) then
                                                     parentSprite:getProperties():Set(IsoFlagType[flagToApply])
-                                                    if parentSprite:getProperties():Is(IsoFlagType[flagToApply]) then
-                                                    end
                                                 end
                                             end
                                         end
