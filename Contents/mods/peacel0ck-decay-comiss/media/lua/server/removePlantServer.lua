@@ -1,4 +1,4 @@
-require = "BuildingObjects/ISRemovePlantCursor"
+require "BuildingObjects/ISRemovePlantCursor"
 
 local ISRemovePlantCursor_getRemovableObject = ISRemovePlantCursor.getRemovableObject
 function ISRemovePlantCursor:getRemovableObject(square)
