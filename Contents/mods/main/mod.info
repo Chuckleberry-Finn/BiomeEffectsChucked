@@ -1,4 +1,7 @@
-name=peacel0k-decay-comiss
-id=peacel0k-decay-comiss
-description=
+id=BiomeEffectsChucked
+name=Biome Effects Chucked
+description=API to add zoned effects. Originally commissioned by peacel0k.
 poster=poster.png
+tags=Build 41
+versionMin=41.0
+
